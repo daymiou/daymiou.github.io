@@ -1,0 +1,241 @@
+<tw-storydata name="Ennui - the Game" startnode="1" creator="Twine" creator-version="2.1.3" ifid="514539D5-00BD-4F50-B362-3B2EEA2AB815" format="Harlowe" format-version="2.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html {
+  background-color: #EEECEC;
+}
+tw-story {
+  background-color: #EEECEC;
+  background-image: url(http://ditheredpixel.com/misc/kitty.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+tw-passage {
+  color: #333333;
+}
+tw-sidebar {
+  display:none; /* Hide the undo and redo buttons */
+}
+tw-link {
+  color: #315881;
+}
+tw-link.visited {
+  color: #7B3181;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Birth" tags="" position="420,68">{
+(set: $playerName to (prompt: &quot;Please enter your name&quot;, &quot;Name&quot;))
+(set: $randomName to (a: &quot;Blah&quot;, &quot;Meh&quot;, &quot;Shrug&quot;, &quot;Blergh&quot;))
+(set: $newPlayerName to (random: 0, $randomName&#x27;s length) of $randomName)
+(set: $counter to 1)
+(set: $dayName to &quot;Monday&quot;)
+(set: $projectNumber to (random: 3, 6))
+}
+It does not matter that your parents named you $playerName. Your name is now $newPlayerName.
+
+Choose the color that best represents the void in your soul.
+
+[[&lt;span style=&quot;color: #686868;&quot;&gt;Grey&lt;/span&gt;-&gt;Choose]] 
+[[&lt;span style=&quot;color: #686868;&quot;&gt;Grey&lt;/span&gt;-&gt;Choose]] 
+[[&lt;span style=&quot;color: #686868;&quot;&gt;Grey&lt;/span&gt;-&gt;Choose]] 
+[[&lt;span style=&quot;color: #434343;&quot;&gt;Darker Grey&lt;/span&gt;-&gt;Choose]] 
+[[&lt;span style=&quot;color: #000000;&quot;&gt;Black&lt;/span&gt;-&gt;Choose]]</tw-passagedata><tw-passagedata pid="2" name="Work Morning" tags="" position="332,347.5">You pull on one of the five shirts you wear every week and mindlessly step into a pair of pants covered in cat hair. You&#x27;re ready for work.
+
+[[Drive in.-&gt;Drive]]
+[[Bike in.-&gt;Bike]]
+[[Take Metro.-&gt;Metro]]</tw-passagedata><tw-passagedata pid="3" name="Sick" tags="" position="487,350">Despite not being physically ill, your body and soul can no longer take the montony of mediocrity. 
+
+[[Go back to sleep.-&gt;Sleep]]
+[[Binge watch //The Golden Girls//.-&gt;Golden]]
+[[Eat 25 stale Oreos that have been in the cupboard for 3 months.-&gt;Oreos]]</tw-passagedata><tw-passagedata pid="4" name="Drive" tags="" position="100,492.5">{
+(set: $counter to it + 1)
+}
+You crashed your car while you stared into the deep abyss of your future. You died.
+
+[[Resurrect?-&gt;Choose]]</tw-passagedata><tw-passagedata pid="5" name="Bike" tags="" position="220,493.5">The fresh air and exercise momentarily distract you from the mundane drumbeat of your march toward death. You have arrived at work.
+
+[[Dick around on Reddit for three hours.-&gt;Reddit]]
+[[Get to work and crank out projects before lunch.-&gt;Industry]]</tw-passagedata><tw-passagedata pid="6" name="Metro" tags="" position="342,495.5">(set: $counter to it + 1)
+The Metro caught fire. You were stuck underground for 7 days. You died.
+
+[[Resurrect?-&gt;Choose]]</tw-passagedata><tw-passagedata pid="7" name="Industry" tags="" position="144,632.5">You finished $projectNumber projects in the morning. As a reward, you have been given (print: $projectNumber * 24) more projects to finish by the end of the day. No lunch for you.
+
+[[Keep working.-&gt;Keep working]]
+[[Quit your job.-&gt;Quit]]
+</tw-passagedata><tw-passagedata pid="8" name="Reddit" tags="" position="277,634.5">Despite accomplishing nothing all morning, the world continues to turn. 
+
+[[Go to lunch.-&gt;Lunch]]
+[[Get some work done.-&gt;Keep working]]</tw-passagedata><tw-passagedata pid="9" name="Sleep" tags="" position="483,470.5">It&#x27;s lunch time. 
+
+[[Eat the 25 stale Oreos.-&gt;Oreos]]
+[[Food is only for people who are alive on the inside.-&gt;Abstain]]</tw-passagedata><tw-passagedata pid="10" name="Golden" tags="" position="608,474.5">You watch //The Golden Girls// for 12 hours and think about all the things you could be accomplishing if you had the will to live.
+
+[[Resolve to become a better, more productive person.-&gt;Better]]
+[[Eat half a jar of peanut butter for dinner.-&gt;Peanut butter]]</tw-passagedata><tw-passagedata pid="11" name="Oreos" tags="" position="731,474.5">Well, that killed about 3 minutes. What do you do now?
+
+[[Binge watch //The Golden Girls//-&gt;Golden]]
+[[Get to work on a long-neglected hobby-&gt;Hobby]]
+[[Go to sleep-&gt;Sleep2]]</tw-passagedata><tw-passagedata pid="12" name="Choose" tags="" position="420,194.5">{
+(if: $counter is 1)[(set: $dayName to &quot;Monday&quot;)]
+(if: $counter is 2)[(set: $dayName to &quot;Tuesday&quot;)]
+(if: $counter is 3)[(set: $dayName to &quot;Wednesday&quot;)]
+(if: $counter is 4)[(set: $dayName to &quot;Thursday&quot;)]
+(if: $counter is 5)[(set: $dayName to &quot;Friday&quot;)]
+(if: $counter is 6)[(set: $dayName to &quot;Saturday&quot;)]
+(if: $counter is 6)[(go-to: &quot;Saturday&quot;)]
+}
+It&#x27;s $dayName morning. You just woke up. Existence is pain. What are you going to do now?
+
+[[Get ready for work.-&gt;Work Morning]]
+[[Fuck it, call in sick.-&gt;Sick]]
+
+</tw-passagedata><tw-passagedata pid="13" name="Abstain" tags="" position="486,602.5">{
+(set: $counter to it + 1)
+}
+It turns out you have a severe allergy to not eating gluten. You have died.
+
+[[Resurrect?-&gt;Choose]]</tw-passagedata><tw-passagedata pid="14" name="Keep working" tags="" position="81,760.5">{
+(set: $randomProject to (random: 1, 4))
+}
+It&#x27;s 5:00 p.m. Congratulations, you&#x27;ve finished (print: $randomProject) of your $projectNumber projects.
+
+[[Leave work to socialize with friends.-&gt;Friends]]
+[[Leave work to sit alone in your apartment and eat peanut butter out of the jar.-&gt;Peanut butter]]</tw-passagedata><tw-passagedata pid="15" name="Friends" tags="" position="31,891.5">Haha, friends. That&#x27;s funny. 
+
+[[Go home to eat peanut butter out of the jar.-&gt;Peanut butter]]</tw-passagedata><tw-passagedata pid="16" name="Quit" tags="" position="197,761.5">{
+(set: $counter to it + 1)
+}
+After storming out of the office, you blindly walk into traffic and are hit by a bus driver who was distracted by a passenger throwing urine on her. You have died.
+
+[[Resurrect?-&gt;Choose]]</tw-passagedata><tw-passagedata pid="17" name="Peanut butter" tags="" position="153,892.5">After a half a jar of peanut butter and a full serving of self-loathing, you are ready to go to bed.
+
+[[Go to sleep.-&gt;Bed]]
+[[Lie in bed for 5 hours watching Law &amp; Order: SVU.-&gt;SVU]]</tw-passagedata><tw-passagedata pid="18" name="Bed" tags="" position="204,1016.5">Haha, like you could fall asleep when you want.
+
+[[Give up on a good night&#x27;s rest and watch //Law &amp; Order: SVU// until the horrific crimes lull you to sleep.-&gt;SVU]]</tw-passagedata><tw-passagedata pid="19" name="SVU" tags="" position="327,1015.5">{
+(set: $counter to it + 1)
+}
+Another day, another horrific sex crime to accompany you into unconsciousness.
+
+[[You&#x27;ve made it through another day.-&gt;Choose]]</tw-passagedata><tw-passagedata pid="20" name="Better" tags="" position="616,601.5">{
+(set: $counter to it + 1)
+}
+This time it&#x27;s going to be different.
+
+[[Go to bed and resolve to wake up early tomorrow morning, exercise, and start the day off right.-&gt;Choose]]</tw-passagedata><tw-passagedata pid="21" name="Hobby" tags="" position="757,603.5">Haha, no, really, what are you going to do?
+
+[[Binge watch //The Golden Girls//.-&gt;Golden]]
+[[Go to sleep.-&gt;Sleep2]]</tw-passagedata><tw-passagedata pid="22" name="Sleep2" tags="" position="742,729">Awesome, it&#x27;s dinner time.
+
+[[Order takeout.-&gt;Takeout]]
+[[Eat half a jar of peanut butter.-&gt;Peanut butter]]</tw-passagedata><tw-passagedata pid="23" name="Takeout" tags="" position="878,725.5">We both know that&#x27;s not happening.
+
+[[Just eat the peanut butter.-&gt;Peanut butter]]</tw-passagedata><tw-passagedata pid="24" name="Lunch" tags="" position="317,760.5">You buy a discount bag of trail mix at CVS and eat it on a patch of grass in the parking lot. 
+
+[[Go back to work.-&gt;Keep working]]
+[[Quit.-&gt;Quit]]</tw-passagedata><tw-passagedata pid="25" name="Saturday" tags="" position="619,872.5">{
+(set: $counter to 1)
+}
+NORTH KOREA HAS BOMBED WASHINGTON, DC. DEATH AND DESTRUCTION ARE EVERYWHERE.
+
+THROUGH SOME FLUKE OF GOD, CHANCE, OR COSMIC DESTINY, YOU HAVE GAINED THE ABILITY TO GO BACK ONE WEEK IN TIME AND BE MARGINALLY HAPPIER.
+
+[[Continue into the bleak future.-&gt;Continue]]
+[[Go back.-&gt;Choose2]]</tw-passagedata><tw-passagedata pid="26" name="Continue" tags="" position="617,988.5">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ZQz91Cx0Ato?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&amp;amp;start=3&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</tw-passagedata><tw-passagedata pid="27" name="Choose2" tags="" position="1279,185.5">{
+(if: $counter is 1)[(set: $dayName to &quot;Monday&quot;)]
+(if: $counter is 2)[(set: $dayName to &quot;Tuesday&quot;)]
+(if: $counter is 3)[(set: $dayName to &quot;Wednesday&quot;)]
+(if: $counter is 4)[(set: $dayName to &quot;Thursday&quot;)]
+(if: $counter is 5)[(set: $dayName to &quot;Friday&quot;)]
+(if: $counter is 6)[(set: $dayName to &quot;Saturday&quot;)]
+(if: $counter is 6)[(go-to: &quot;Saturday2&quot;)]
+}
+It&#x27;s $dayName morning! You just woke up! Existence is slightly less painful! What are you going to do now?
+
+[[Get ready for work!-&gt;Work Morning2]]
+[[Fuck it, call in sick!-&gt;Sick2]]
+
+</tw-passagedata><tw-passagedata pid="28" name="Work Morning2" tags="" position="1216,323.5">You pull on one of the five shirts you wear every week and mindlessly step into a pair of pants covered in cat hair! You&#x27;re ready for work!
+
+[[Drive in!-&gt;Drive2]]
+[[Bike in!-&gt;Bike2]]
+[[Take Metro!-&gt;Metro2]]</tw-passagedata><tw-passagedata pid="29" name="Sick2" tags="" position="1553,329.5">Despite not being physically ill, your body and soul can no longer take the montony of mediocrity! 
+
+[[Go back to sleep!-&gt;Sleep3]]
+[[Binge watch //The Golden Girls//!-&gt;Golden2]]
+[[Eat 25 stale Oreos that have been in the cupboard for 3 months!-&gt;Oreos2]]</tw-passagedata><tw-passagedata pid="30" name="Drive2" tags="" position="1104,454.5">{
+(set: $counter to it + 1)
+}
+You crashed your car while you stared into the deep abyss of your future! You died!
+
+[[Resurrect?-&gt;Choose2]]</tw-passagedata><tw-passagedata pid="31" name="Bike2" tags="" position="1220,454.5">The fresh air and exercise momentarily distract you from the mundane drumbeat of your march toward death! You have arrived at work!
+
+[[Dick around on Reddit for three hours!-&gt;Reddit2]]
+[[Get to work and crank out projects before lunch!-&gt;Industry2]]</tw-passagedata><tw-passagedata pid="32" name="Metro2" tags="" position="1335,453.5">(set: $counter to it + 1)
+The Metro caught fire! You were stuck underground for 7 days! You died!
+
+[[Resurrect?-&gt;Choose2]]</tw-passagedata><tw-passagedata pid="33" name="Industry2" tags="" position="1076,588.5">You finished $projectNumber projects in the morning! As a reward, you have been given (print: $projectNumber * 24) more projects to finish by the end of the day! No lunch for you!
+
+[[Keep working!-&gt;Keep working2]]
+[[Quit your job!-&gt;Quit2]]
+</tw-passagedata><tw-passagedata pid="34" name="Reddit2" tags="" position="1201,588.5">Despite accomplishing nothing all morning, the world continues to turn! 
+
+[[Go to lunch!-&gt;Lunch2]]
+[[Get some work done!-&gt;Keep working2]]</tw-passagedata><tw-passagedata pid="35" name="Keep working2" tags="" position="1075,717.5">{
+(set: $randomProject to (random: 1, 4))
+}
+It&#x27;s 5:00 p.m.! Congratulations, you&#x27;ve finished (print: $randomProject) of your $projectNumber projects!
+
+[[Leave work to socialize with friends!-&gt;Friends2]]
+[[Leave work to sit alone in your apartment and eat peanut butter out of the jar!-&gt;Peanut butter2]]</tw-passagedata><tw-passagedata pid="36" name="Quit2" tags="" position="1196,717.5">{
+(set: $counter to it + 1)
+}
+After storming out of the office, you blindly walk into traffic and are hit by a bus driver who was distracted by a passenger throwing urine on her! You have died!
+
+[[Resurrect?-&gt;Choose2]]</tw-passagedata><tw-passagedata pid="37" name="Lunch2" tags="" position="1314,715.5">You buy a discount bag of trail mix at CVS and eat it on a patch of grass in the parking lot! 
+
+[[Go back to work!-&gt;Keep working2]]
+[[Quit!-&gt;Quit2]]</tw-passagedata><tw-passagedata pid="38" name="Friends2" tags="" position="1016,869.5">Haha, friends! That&#x27;s funny! 
+
+[[Go home to eat peanut butter out of the jar!-&gt;Peanut butter2]]</tw-passagedata><tw-passagedata pid="39" name="Peanut butter2" tags="" position="1141,866.5">After a half a jar of peanut butter and a full serving of self-loathing, you are ready to go to bed!
+
+[[Go to sleep!-&gt;Bed2]]
+[[Lie in bed for 5 hours watching Law &amp; Order: SVU!-&gt;SVU2]]</tw-passagedata><tw-passagedata pid="40" name="Bed2" tags="" position="1085,1003.5">Haha, like you could fall asleep when you want!
+
+[[Give up on a good night&#x27;s rest and watch //Law &amp; Order: SVU// until the horrific crimes lull you to sleep!-&gt;SVU2]]</tw-passagedata><tw-passagedata pid="41" name="SVU2" tags="" position="1212,1001.5">{
+(set: $counter to it + 1)
+}
+Another day, another horrific sex crime to accompany you into unconsciousness!
+
+[[You&#x27;ve made it through another day!-&gt;Choose2]]</tw-passagedata><tw-passagedata pid="42" name="Sleep3" tags="" position="1516,447.5">It&#x27;s lunch time! 
+
+[[Eat the 25 stale Oreos!-&gt;Oreos2]]
+[[Food is only for people who are alive on the inside!-&gt;Abstain2]]</tw-passagedata><tw-passagedata pid="43" name="Golden2" tags="" position="1635,449.5">You watch //The Golden Girls// for 12 hours and think about all the things you could be accomplishing if you had the will to live!
+
+[[Resolve to become a better, more productive person!-&gt;Better2]]
+[[Eat half a jar of peanut butter for dinner!-&gt;Peanut butter2]]</tw-passagedata><tw-passagedata pid="44" name="Oreos2" tags="" position="1753,448.5">Well, that killed about 3 minutes! What do you do now?
+
+[[Binge watch //The Golden Girls//!-&gt;Golden2]]
+[[Get to work on a long-neglected hobby!-&gt;Hobby2]]
+[[Go to sleep!-&gt;Sleep4]]</tw-passagedata><tw-passagedata pid="45" name="Abstain2" tags="" position="1495,572.5">{
+(set: $counter to it + 1)
+}
+It turns out you have a severe allergy to not eating gluten! You have died!
+
+[[Resurrect?-&gt;Choose2]]</tw-passagedata><tw-passagedata pid="46" name="Better2" tags="" position="1610,574.5">{
+(set: $counter to it + 1)
+}
+Yeah! This time it&#x27;s going to be different!
+
+[[Go to bed and resolve to wake up early tomorrow morning, exercise, and start the day off right!-&gt;Choose2]]</tw-passagedata><tw-passagedata pid="47" name="Hobby2" tags="" position="1725,576.5">Haha, no, really! What are you going to do?
+
+[[Binge watch //The Golden Girls//!-&gt;Golden]]
+[[Go to sleep!-&gt;Sleep4]]</tw-passagedata><tw-passagedata pid="48" name="Sleep4" tags="" position="1844,574.5">Awesome, it&#x27;s dinner time!
+
+[[Order takeout!-&gt;Takeout2]]
+[[Eat half a jar of peanut butter!-&gt;Peanut butter2]]</tw-passagedata><tw-passagedata pid="49" name="Takeout2" tags="" position="1949,701.5">We both know that&#x27;s not happening!
+
+[[Just eat the peanut butter!-&gt;Peanut butter2]]</tw-passagedata><tw-passagedata pid="50" name="Saturday2" tags="" position="1763,884.5">NORTH KOREA HAS SENT UNICORNS TO WASHINGTON, DC! RAINBOWS ARE EVERYWHERE!
+&lt;img src=&quot;https://media.giphy.com/media/xZJZDtrWh2gIo/giphy.gif&quot;&gt;
+[[Pet a unicorn!-&gt;Unicorn]]</tw-passagedata><tw-passagedata pid="51" name="Unicorn" tags="" position="1764.5,1011.5">{
+(set: $counter to 1)
+}
+You have been gored by the unicorn. You died.
+
+[[Resurrect?-&gt;Choose]]</tw-passagedata></tw-storydata>
+
