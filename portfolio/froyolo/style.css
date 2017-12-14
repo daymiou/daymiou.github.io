@@ -1,0 +1,39 @@
+html, body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	
+	background: #000000;
+	color: white;
+}
+
+html, body, canvas {
+	touch-action: none;
+	touch-action-delay: none;
+}
+
+@font-face {
+	font-family: 'Arial Rounded Bold';
+	src: url('fonts/arial rounded bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'SourceCodePro-Bold';
+	src: url('fonts/sourcecodepro-bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'GROBOLD';
+	src: url('fonts/grobold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'RifficFree-Bold';
+	src: url('fonts/rifficfree-bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Dimbo Regular';
+	src: url('fonts/dimbo regular.ttf') format('truetype');
+}
+
